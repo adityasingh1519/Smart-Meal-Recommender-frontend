@@ -57,7 +57,7 @@ const handleApiError = (error: unknown, defaultMessage: string): never => {
         }
         
         if (!axiosError.response) {
-            throw new ApiError('Network error. Please check your internet connection.', 0, error);
+            throw new ApiError('Looks like we’ve heroically hit OpenAI limit. Yep too broke to process more requests right now. Try again later.', 0, error);
         }
         
         const statusCode = axiosError.response.status;

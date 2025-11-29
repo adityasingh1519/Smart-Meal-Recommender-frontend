@@ -180,6 +180,21 @@ function App() {
                         </div>
                     </div>
                 )}
+
+                {/* Footer */}
+                <div className="mt-12 sm:mt-16 text-center pb-4">
+                    <p className="text-gray-400 text-sm sm:text-base">
+                        Made by{' '}
+                        <a 
+                            href="https://instagram.com/adityastale" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text font-semibold hover:opacity-80 transition-opacity duration-200"
+                        >
+                            @adityastale
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     );
