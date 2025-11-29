@@ -10,13 +10,18 @@ const client = axios.create({
 
 // Custom error class for API errors
 export class ApiError extends Error {
+    statusCode?: number;
+    originalError?: unknown;
+
     constructor(
         message: string,
-        public statusCode?: number,
-        public originalError?: unknown
+        statusCode?: number,
+        originalError?: unknown
     ) {
         super(message);
         this.name = 'ApiError';
+        this.statusCode = statusCode;
+        this.originalError = originalError;
     }
 }
 
@@ -92,7 +97,7 @@ export const analyzeImage = async (file: File): Promise<string[]> => {
         
         return response.data;
     } catch (error) {
-        handleApiError(error, 'Failed to analyze image. Please try again.');
+        return handleApiError(error, 'Failed to analyze image. Please try again.');
     }
 };
 
@@ -111,7 +116,7 @@ export const getRecommendations = async (preferences: Preferences): Promise<Reco
         
         return response.data;
     } catch (error) {
-        handleApiError(error, 'Failed to get recipe recommendations. Please try again.');
+        return handleApiError(error, 'Failed to get recipe recommendations. Please try again.');
     }
 };
 
