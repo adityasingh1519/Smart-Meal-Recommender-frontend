@@ -183,7 +183,7 @@ function App() {
 
                 {/* Footer */}
                 <div className="mt-12 sm:mt-16 text-center pb-4">
-                    <p className="text-gray-400 text-sm sm:text-base">
+                    {/* <p className="text-gray-400 text-sm sm:text-base">
                         Made by{' '}
                         <a 
                             href="https://instagram.com/adityastale" 
@@ -193,7 +193,7 @@ function App() {
                         >
                             @adityastale
                         </a>
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </div>
